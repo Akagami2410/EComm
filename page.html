@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/assests/js/dynamic.js" defer></script>
+    <script src="/assests/js/page.js" defer></script>
+    <script src="/assests/js/script.js" defer></script>
+    <link rel="stylesheet" href="/assests/css/index.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="hidden-sidemenu"></nav>
+    <div class="overlay-hidden">
+      <!-- <div class="filter"></div> -->
+    </div>
+    <header class="header">
+      <nav class="main-nav">
+        <a href="index.html" class="logo nav-item">Logo</a>
+        <div class="links nav-item">
+          <a href="#">men</a>
+          <a href="#">women</a>
+          <a href="#">kids</a>
+          <a href="#">unisex</a>
+        </div>
+
+        <div class="icons nav-item">
+          <span class="acnt"><i class="fa-regular fa-user"></i></span>
+          <span class="cart-icon"
+            ><i class="fa-solid fa-cart-shopping"></i>
+            <p class="cart-item-count"></p
+          ></span>
+          <span class="hamburger"><i class="fa-solid fa-bars"></i></span>
+        </div>
+      </nav>
+    </header>
+
+    <section class="show-available-item">
+      <div class="padding-wala-div">
+        <article class="hidden-button">
+          <a href="#" class="btn-hide button" onclick="ShowFilterOptions(event)"
+            >Filter</a
+          >
+        </article>
+
+        <div class="overlay-div">
+          <article class="filter">
+            <h5 class="filter-heading fifer">Filter</h5>
+            <div class="fit sort">
+              <h4 class="filter-heading">sort by</h4>
+              <select name="sort" id="sort" class="filtering">
+                <option value="default">default</option>
+                <option value="low-price">Price: Low to High</option>
+                <option value="high-price">Price: High to Low</option>
+                <option value="sort-by-name-asc">A....Z</option>
+                <option value="sort-by-name-desc">Z....A</option>
+              </select>
+            </div>
+            <div class="fit gender">
+              <h5 class="filter-heading">gender</h5>
+              <label class="cat-select">
+                <!-- <span class="checked"></span> -->
+                <input
+                  type="checkbox"
+                  id="1"
+                  value="Men's"
+                  onchange="Filter(this)"
+                />
+                men
+              </label>
+              <label class="cat-select">
+                <input
+                  type="checkbox"
+                  id="2"
+                  value="Women's"
+                  onchange="Filter(this)"
+                />
+                women
+              </label>
+              <label class="cat-select">
+                <input
+                  type="checkbox"
+                  id="3"
+                  value="Unisex"
+                  onchange="Filter(this)"
+                />
+                unisex
+              </label>
+            </div>
+            <div class="fit lil-kids">
+              <h5 class="filter-heading">kids</h5>
+              <label>
+                <input
+                  type="checkbox"
+                  id="4"
+                  value="Boys"
+                  onchange="Filter(this)"
+                />
+                boys
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  id="5"
+                  value="Girls"
+                  onchange="Filter(this)"
+                />
+                girls
+              </label>
+            </div>
+            <div class="fit money">
+              <h5 class="filter-heading">price</h5>
+              <label>
+                <input type="checkbox" id="6" onchange="Filter(this)" />
+                promotion
+              </label>
+              <label>
+                <p>range</p>
+                <input type="text" />
+                -
+                <input type="text" />
+              </label>
+            </div>
+            <div class="fit color">
+              <h5 class="filter-heading">colour</h5>
+              <div class="colors">
+                <label class="color-filt first-col">
+                  <input
+                    type="checkbox"
+                    id="7"
+                    value="red"
+                    onchange="Filter(this)"
+                  />
+                  <span class="code-color">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+                        class="unselected"
+                      ></path>
+                    </svg>
+                  </span>
+                  <p class="color-name">red</p>
+                </label>
+                <label class="color-filt first-col">
+                  <input
+                    type="checkbox"
+                    id="7"
+                    value="brown"
+                    onchange="Filter(this)"
+                  />
+                  <span class="code-color brown">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+                        class="unselected"
+                      ></path>
+                    </svg>
+                  </span>
+                  <p class="color-name">brown</p>
+                </label>
+                <label class="color-filt first-col">
+                  <input
+                    type="checkbox"
+                    id="7"
+                    value="blue"
+                    onchange="Filter(this)"
+                  />
+                  <span class="code-color blue">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+                        class="unselected"
+                      ></path>
+                    </svg>
+                  </span>
+                  <p class="color-name">blue</p>
+                </label>
+                <label class="color-filt first-col">
+                  <input
+                    type="checkbox"
+                    id="7"
+                    value="green"
+                    onchange="Filter(this)"
+                  />
+                  <span class="code-color green">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+                        class="unselected"
+                      ></path>
+                    </svg>
+                  </span>
+                  <p class="color-name">green</p>
+                </label>
+                <label class="color-filt sec-col">
+                  <input
+                    type="checkbox"
+                    id="7"
+                    value="black"
+                    onchange="Filter(this)"
+                  />
+                  <span class="code-color black">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+                        class="unselected"
+                      ></path>
+                    </svg>
+                  </span>
+                  <p class="color-name">black</p>
+                </label>
+                <label class="color-filt sec-col">
+                  <input
+                    type="checkbox"
+                    id="7"
+                    value="white"
+                    onchange="Filter(this)"
+                  />
+                  <span class="code-color white">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+                        class="unselected"
+                      ></path>
+                    </svg>
+                  </span>
+                  <p class="color-name">white</p>
+                </label>
+                <label class="color-filt sec-col">
+                  <input
+                    type="checkbox"
+                    id="7"
+                    value="yellow"
+                    onchange="Filter(this)"
+                  />
+                  <span class="code-color yellow">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+                        class="unselected"
+                      ></path>
+                    </svg>
+                  </span>
+                  <p class="color-name">yellow</p>
+                </label>
+                <label class="color-filt sec-col">
+                  <input
+                    type="checkbox"
+                    id="7"
+                    value="purple"
+                    onchange="Filter(this)"
+                  />
+                  <span class="code-color purple">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+                        class="unselected"
+                      ></path>
+                    </svg>
+                  </span>
+                  <p class="color-name">purple</p>
+                </label>
+                <label class="color-filt third-col">
+                  <input
+                    type="checkbox"
+                    id="7"
+                    value="pink"
+                    onchange="Filter(this)"
+                  />
+                  <span class="code-color pink">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+                        class="unselected"
+                      ></path>
+                    </svg>
+                  </span>
+                  <p class="color-name">pink</p>
+                </label>
+                <label class="color-filt third-col">
+                  <input
+                    type="checkbox"
+                    id="7"
+                    value="grey"
+                    onchange="Filter(this)"
+                  />
+                  <span class="code-color gray">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+                        class="unselected"
+                      ></path>
+                    </svg>
+                  </span>
+                  <p class="color-name">grey</p>
+                </label>
+                <label class="color-filt third-col">
+                  <input
+                    type="checkbox"
+                    id="7"
+                    value="orange"
+                    onchange="Filter(this)"
+                  />
+                  <span class="code-color orange">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+                        class="unselected"
+                      ></path>
+                    </svg>
+                  </span>
+                  <p class="color-name">orange</p>
+                </label>
+                <label class="color-filt third-col">
+                  <input
+                    type="checkbox"
+                    id="7"
+                    value="lime"
+                    onchange="Filter(this)"
+                  />
+                  <span class="code-color lime">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+                        class="unselected"
+                      ></path>
+                    </svg>
+                  </span>
+                  <p class="color-name">lime</p>
+                </label>
+              </div>
+            </div>
+          </article>
+          <span class="close-filter" onclick="closeFilter()"
+            ><i class="fa-solid fa-x"></i
+          ></span>
+        </div>
+        <article class="avail-item">
+          <div class="avail-item-container">
+            <!-- one item -->
+
+            <!-- end of one item -->
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="section-cart">
+      <div class="opacity-less"></div>
+      <div class="cart">
+        <article class="cart-header">
+          <div class="cart-count">
+            <a class="crt"></a>
+            <a class="clear-cart">(Clear cart)</a>
+          </div>
+          <span class="cart-close">
+            <i class="fa-solid fa-x"></i>
+          </span>
+        </article>
+
+        <!-- cart products -->
+        <article class="cart-products">
+          <!-- one cart product -->
+
+          <!-- end of cart product -->
+        </article>
+
+        <article class="cart-footer">
+          <span class="cart-total"
+            >Total: <span class="price-final"></span
+          ></span>
+          <span class="shippin"
+            ><i class="fa-solid fa-truck-fast"></i>Free Shipping</span
+          >
+          <a class="checkout button">checkout</a>
+        </article>
+      </div>
+    </section>
+  </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+</html>
